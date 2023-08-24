@@ -192,6 +192,11 @@ Les degens ont continués leur périple....
 
 #### 	a) Counter Party (2012)
 
+**NOTES :** *Bitcoin-dev-digest, Vol 99, Issue45*\
+"Please correct me if I'm wrong, but I believe Counterparty has, in the past, encoded their data within public key data, so this concern is not hypothetical." de Russell O'Connor \<roconnor@blockstream.com\>
+
+![bitcoin-digest](assets/bitcoin-digest_counter_party.jpg)
+
 #### 	b) Les colored coins (2014)
 
 #### 	c) Ethreum et les ABI (2015)
