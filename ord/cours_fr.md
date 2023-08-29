@@ -55,7 +55,8 @@ Je suis disponible pour toutes questions, critiques ou retour de votre part sur 
 #### 	c) Un Meta Protocol : BOSS
 ### 3) Quelques techniques déployées
 ###     a) Les cursed inscriptions
-
+###     b) bitmap et les names
+###     c) Inscriptions récursives
 
 
 ## Conclusion
@@ -736,6 +737,18 @@ L'acceptation de ces cursed inscriptions permet maintenant de manipuler "légale
 Certaines inscriptions se sont popularisées en écrivant uniquement du texte dans ses dernières. Certaines modes ont bien marchée et un que j'aime bien sont les [𝕏 names](https://ordinalswallet.com/collection/%F0%9D%95%8F-names).
 
 > Compléter avec la doc bitmap.
+
+#### c) Inscriptions récursives
+
+Il a été déployé récemment la plupart des frameworks javascript en inscriptions.
+[Ord.io on X: "React is now fully on-chain on Bitcoin! ](https://twitter.com/ord_io/status/1694024434485538819)
+
+On trouvera ici quelques outils inscrits : 
+- [ordengine-react@0.0.1](https://ordinals.com/content/faa7b9b0b7884360f6c2b34693855a0d60df5f344727c72e3691a80f84ec6a81i0)
+- [React@18.2.0](https://ordinals.com/content/7f403153b6484f7d24f50a51e1cdf8187219a3baf103ef0df5ea2437fb9de874i0)
+- [React-DOM@18.2.0](https://ordinals.com/content/89295aaf617708128b95d22e7099ce32108d4b918386e6f90994e7979d22ba72i0)
+
+Ces nouvelles inscriptions ouvrent la voie à de nouvelles inscriptions et un nouveau web sur Bitcoin. 
 
 # Conclusion
 
