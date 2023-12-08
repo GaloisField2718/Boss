@@ -170,7 +170,7 @@ Les Bitcoin rocks [Bitcoin Rocks | Ordiscan](https://ordiscan.com/collection/bit
 Les [Taproot Wizard](https://taprootwizards.com/) auparavant Bitcoin Wizard 🧙🧙‍♀️ sur reddit ont mintés la majeure partie de la collection en un seul bloc [collaboration with Luxor mining pool](https://www.coindesk.com/tech/2023/02/02/giant-bitcoin-taproot-wizard-nft-minted-in-collaboration-with-luxor-mining-pool/amp/) et ont connu un franc succès dans la communauté. ils représentent aujourd'hui une pièce d'OG et une part de l'histoire Ordinals. 
 Les chiffres sur Taproot Wizard peuvent être trouvés sur [OXALUS.io](https://oxalus.io/nft/ordinals/bitcoin-wizards).
 
-Pour une [description](https://unisat.io/market/collection?collectionId=bitcoin-wizards) : Bitcoin Wizard est un projet Ordinal NFT célébrant le 10ème anniversaire de la collection originale Bitcoin Wizard créée par mavensbot. Magic Internet Money est une publicité iconique du subreddit bitcoin. Créé le lundi 18 février 2013 par u/mavensbot, c'est rapidement devenu la pub la plus populaire de reddit. 
+Pour une [description](https://unisat.io/market/collection?collectionId=bitcoin-wizards) : Taproot Wizard est un projet Ordinal NFT célébrant le 10ème anniversaire de la collection originale Bitcoin Wizard créée par mavensbot. Magic Internet Money est une publicité iconique du subreddit bitcoin. Créé le lundi 18 février 2013 par u/mavensbot, c'est rapidement devenu la pub la plus populaire de reddit. 
 mavensbot est le père de Magic Internet Money: Bitcoin Wizard.
 
 ![firstWizard](./assets/first_wizard.jpg)
