@@ -94,7 +94,7 @@ Via l'`OP_CODE` on peut réaliser des opérations algorithmique sur le réseau B
 
 > Pour aller plus loin : Qu'est-ce qu'une transaction Bitcoin ?
 
-Ordinals (comme d'autre avant) propose un standard de transaction, qui s'appelle `enveloppe` : 
+Ordinals (comme d'autres avant) propose un standard de transaction, qui s'appelle `enveloppe` : 
 ```
 OP_FALSE
 OP_IF
