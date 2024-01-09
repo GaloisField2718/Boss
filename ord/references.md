@@ -16,6 +16,8 @@
 
 9. [magicoss/msigner: an open source Bitcoin Ordinals Partially Signed Bitcoin Transactions (PSBT) signer library. It supports atomic swap of the inscription and provides a simple and secure way to structure Bitcoin transactions for marketplaces.](https://github.com/magicoss/msigner)
 
+10. 
+
 -----------------------------------------------------
 | MARKETPLACE     |       URL                         |
 -----------------------------------------------------
@@ -29,6 +31,24 @@
 -----------------------------------------------------
 | idclub         | https://idclub.io/market/          |
 -----------------------------------------------------
+| SatX           | https://www.satsx.io/marketplace/ordinals/cbrc20/sort |
+-----------------------------------------------------
+
+---------------------------------------------------------------------
+| INSCRIBE TOOLS           |       URL                               |
+----------------------------------------------------------------------
+| Unisat                   | unisat.io/inscribe                      |
+---------------------------------------------------------------------
+| OrdinalsWallet           | https://ordinalswallet.com/inscribe     |
+---------------------------------------------------------------------
+| SatX                     | https://www.satsx.io/inscribe/ordinals  |
+--------------------------------------------------------------------
+| idclub                   | https://idclub.io/inscribe              |
+---------------------------------------------------------------------
+| Inscribe Now             | https://inscribenow.io/new              |
+---------------------------------------------------------------------
+| Inscribe today (cbrc20)  | https://inscribe.today/                 |
+---------------------------------------------------------------------
 
 
 ----------------------------------------------------
@@ -42,25 +62,35 @@
 ----------------------------------------------------
 
 
------------------------ --------- ----------------------------
-Groupes de discussions | Canal 	 |  Lien                      |
------------------------ --------- ----------------------------
-\>TheOrd 	      | Discord | https://discord.gg/wtMmkxvq |
-----------------------  --------  ----------------------------
-The Ordicord	      | Discord | https://discord.gg/6yzuJWvG |
----------------------- --------- -----------------------------
-Ordinal Board 	      | Discord | https://discord.gg/PnJSfSPz |
----------------------- --------- -----------------------------
-Ordinall. 	      | Discord | https://discord.gg/aN7HbUp9 |
----------------------- --------- -----------------------------
-Taproot Wizard 	      | Discord | https://discord.gg/w86XGTgp |
----------------------- --------- -----------------------------
-BRC20 FRANCE 	      | Discord | https://discord.gg/tYpzak2R |
----------------------- --------- -----------------------------
-Ordinals Francophone  | Telegram | https://t.me/OrdinalsFR    |
----------------------- ---------- ----------------------------
-BRC20 France 	      | Telegram | Request to be added 	      |
----------------------- ---------- ----------------------------
+--------------------------------------------------------------
+| Groupes de discussions | Canal 	 |  Lien                      |
+---------------------------------------------------------------
+| \>TheOrd 	            | Discord | https://discord.gg/wtMmkxvq |
+---------------------------------------------------------------
+| The Ordicord	        | Discord | https://discord.gg/6yzuJWvG |
+---------------------------------------------------------------
+| Ordinal Board 	      | Discord | https://discord.gg/PnJSfSPz |
+---------------------------------------------------------------
+| Ordinall. 	          | Discord | https://discord.gg/aN7HbUp9 |
+---------------------------------------------------------------
+| Taproot Wizard 	      | Discord | https://discord.gg/w86XGTgp |
+---------------------------------------------------------------
+| BRC20 FRANCE 	        | Discord | https://discord.gg/tYpzak2R |
+---------------------------------------------------------------
+| Cyborg.org            | Discord | https://discord.gg/sHFbyTjP |
+----------------------------------------------------------------
+| Ordinal Novus         | Discord | https://discord.gg/nnvHBg46 |
+----------------------------------------------------------------
+| Ordinal Friends $FREN | Discord | https://discord.gg/3ZgFzFyj |
+---------------------------------------------------------------
+| Ordinals Francophone  | Telegram | https://t.me/OrdinalsFR    |
+---------------------------------------------------------------
+| Ordi Chat             | Telegram | https://t.me/ordi_chat    |
+---------------------------------------------------------------
+| BTC Ordinals FR      | Telegram  | https://t.me/OrdinalsFrancophone |
+---------------------------------------------------------------
+| BRC20 France 	        | Telegram | Request to be added 	      |
+---------------------------------------------------------------
 
 
 
