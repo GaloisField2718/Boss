@@ -114,7 +114,9 @@ OP_ENDIF
 Initialement l'`OP_RETURN` était utilisé pour inscrire et indexer du texte (détaillé dans I.2 : Des idées anciennes, remises au goût du jour). 
 Depuis les récentes mises à jour cela a pu évoluer (comme on le verra au II.2 : Théorie et implémentation, *l'inscription*).
 
-Ce protocole a donc pu être utilisé de l'arrivée de l'art génératif élémentaire (I.1.c : l'arrivée des degens et des techos) jusqu'à aujourd'hui avec l'annonce d'un méta protocole comme [BOSS](https://github.com/galoisfield2718/boss) (III.2.c).
+Ce protocole a donc pu être utilisé de l'arrivée de l'art génératif élémentaire (I.1.c : l'arrivée des degens et des techos) jusqu'à aujourd'hui. 
+
+Le méta protocole [BOSS (Bitcoin Operating Standard System](https://github.com/galoisfield2718/boss) (III.2.c) a aujourd'hui était abandonné et le cours est en train d'être mis à jour pour prendre en considération cette évolution. 
 
 Les évolutions sont multiples et il n'est pas possible de tout suivre. Le but est donc ici d'apporter un premier éclairage sur la théorie des [`Ordinals`](https://www.youtube.com/watch?v=g-isJScvFlE).
 > Remarque vocabulaire : En anglais on parle de 'Ordinal Theory' le compte GitHub qui gère le dossier principal `ord` se nomme `ordinals`. Il est d'usage de parler d'Ordinals et le mot 'ordinal' se retrouve en général au pluriel. C'est pourquoi il semble naturel de traduire en français la Théorie des Ordinals. 
@@ -403,13 +405,40 @@ Le `OP_FALSE`, sert à terminer le script précédent l'inscription. On peut not
 L'`OP_CODE` `OP_IF` ... `OP_ENDIF` correspond au coeur du protocole Ordinals. En effet, grâce à cela on va pouvoir "empaqueter" de la data dans notre transaction qui sera : gravée dans la transaction, facilement "transportable" et "interprétable" ainsi que très personalisable. Ordinals est UNE proposition d'utilisation de ce `OP_IF`...`OP_ENDIF` mais il peut y avoir bien d'autres [^1]. 
 
 
-Ensuite, on utilise une succession de `OP_PUSH` traduite dans Bitcoin par : `OP_PUSHBYTExx` où xx est un nombre calculé en fonction de la longueur de la chaîne de caractères. 
-Dans Bitcoin on a deux `OP_CODE` qui représente expressément `OP_PUSH 1` et `OP_PUSH 0` : `OP_1` et `OP_0`. Cela est important car il permet de séparer les données entre-elles. Cela est important pour indexer les données inscrites via Ordinals. 
+Ensuite, on utilise une succession de `OP_PUSH` pour envoyer correctement toutes les données. Cela est traduit dans Bitcoin par : `OP_PUSHBYTES_xx` où xx est un nombre calculé en fonction de la longueur de la chaîne de caractères.
 
 
-[^1] : A ce sujet on notera le protocole [Atomicals](https://github.com/atomicals) (une partie de ce cours sera à l'avenir consacré à Atomicals). Atomicals utilise ce même principe de `OP_IF`...`OP_ENDIF` mais rempli cet "empaquetage" différememnt. 
+On commence donc par envoyé le texte `ord` au format hexadécimal dans notre transaction : `OP_PUSHBYTES_3 6f7264` suivi d'un `OP_PUSHBYTES_1 01`.
+Ensuite comme indiqué dans l'enveloppe ci-dessus on *push* le type de fichier suivant le format [MIME](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types) avec l'encodage. Un fichier `json` sera en général envoyé au réseau avec le format : `text/plain;charset=utf-8` ou `application/json`.
+
+Puis que nous reste-t-il à envoyé ? 
+Les données elles-mêmes ! Ainsi, en fonction des données elles seront au préalable chiffrées suivant une base spécifique avant d'être convertie en hexadécimal. 
+
+Qu'est-ce que cela veut dire ?
+
+Si j'ai une image que je souhaite inscrire au format JPEG, je vais commencer par spécifier le type : `image/jpeg`. 
+
+Ensuite je vais convertir mon image en base64. Cela est fait aisément avec des outils comme [Image to Base64 | guru](https://base64.guru/converter/encode/image) ou des packages dans n'importe quel langage de programmation. 
+Une fois convertie en base64, je dois convertir cela au format hexadécimal afin que ce soit accepté par le réseau Bitcoin. On peut pour cela utiliser [CyberChef](https://gchq.github.io/CyberChef/#recipe=From_Hex('Auto')) qui nous fournit une suite d'outils très puissants en interface graphique et API/packages.
+
+Pour voir comment lire une image inscrite il suffit de faire le chemin inverse. Vous trouverez un [tweet](https://twitter.com/Blockcryptology/status/1708454640373686299) fait à ce propos. 
+
+##### Lecture d'une inscription depuis mempool.space
+
+On a maintenant tous les outils pour lire une inscription directement depuis l'explorer [mempool.space](https://mempool.space)
+
+Par simplicité on traitera une transaction de type texte afin de ne pas avoir trop de data à transcrire. 
+
+Prenons la transaction : [`b61b0172d95e266c18aea0c624db987e971a5d6d4ebc2aaed85da4642d635735`](https://mempool.space/tx/b61b0172d95e266c18aea0c624db987e971a5d6d4ebc2aaed85da4642d635735) [^2], l'inscription de `deploy` d'ordi (on verra plus tard ce à quoi cela correspond plus précisément, en attendant on va juste la "décompiler").
+
+<img src="./assets/tx_deploy_ordi.png" alt="Transaction de deploy ordi" width="200" height="100">
+
+<img src="./assets/p2tr_deploy_ordi.png" alt="P2TR script deploy ordi" width="200" height="100">
 
 
+[^1]: A ce sujet on notera le protocole [Atomicals](https://github.com/atomicals) (une partie de ce cours sera à l'avenir consacré à Atomicals). Atomicals utilise ce même principe de `OP_IF`...`OP_ENDIF` mais rempli cet "empaquetage" différememnt. 
+
+[^2]: On notera que l'id d'une inscription est donnée par [txid]i0. Le i0 detérmine l'input, on peut avoir autre chose que i0 mais la plupart sont avec i0. Si on a plusieurs inputs on aura i1, i2,... . Mais la construction de l'id de l'inscription reste la même. 
 
 ####	c) Le code
 
@@ -870,3 +899,5 @@ Une série d'annexes évolutives pour clarifier certains points de ce cours.
 > [Inscriptions documentation officielle](https://docs.ordinals.com/inscriptions.html)
 
 > [ordpool.space | Explorer Bitcoin + Visualisation txs Ordinals](https://ordpool.space)
+
+> [Décompiler une transaction avec image](https://twitter.com/Blockcryptology/status/1708454640373686299)
