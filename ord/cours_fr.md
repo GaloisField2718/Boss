@@ -189,7 +189,7 @@ Jusqu'à récemment en ajouter encore le 29 juin 2023 :
 
 
  <img src="./assets/last_wizard.webp" alt="lastWizard" width="450" height="450">
- 
+
 [*Inscription #14,163,842*](https://ord.link/14163842)
 
 Plus qu'un simple projet, ils sont un symbole des débuts d'Ordinals et de bitcoin sur reddit et Internet !
@@ -344,7 +344,8 @@ Les raretés initiales étant :
 - `mythic`: Le premier sat du genesis bloc (Unique !).
 
 Néanmoins de nouvelles raretés sont apparus notamment chez [sating](https://sating.io) : 
-![satsRarity](./assets/sats_rarity.png)
+
+ <img src="./assets/sats_rarity.png" alt="satsRarity" width="350" height="300">
 
 ####	c) A la recherche des sats rares
 
@@ -437,14 +438,66 @@ Par simplicité on traitera une transaction de type texte afin de ne pas avoir t
 
 Prenons la transaction : [`b61b0172d95e266c18aea0c624db987e971a5d6d4ebc2aaed85da4642d635735`](https://mempool.space/tx/b61b0172d95e266c18aea0c624db987e971a5d6d4ebc2aaed85da4642d635735) [^2], l'inscription de `deploy` d'ordi (on verra plus tard ce à quoi cela correspond plus précisément, en attendant on va juste la "décompiler").
 
-<img src="./assets/tx_deploy_ordi.png" alt="Transaction de deploy ordi" width="200" height="100">
+<img src="./assets/tx_deploy_ordi.png" alt="Transaction de deploy ordi" width="400" height="300">
 
-<img src="./assets/p2tr_deploy_ordi.png" alt="P2TR script deploy ordi" width="200" height="100">
+<img src="./assets/p2tr_deploy_ordi.png" alt="P2TR script deploy ordi" width="450" height="250">
+
+On reproduit ci-dessous le script qui nous intéresse (p2tr) contenu dans cette transaction : 
+
+```
+OP_PUSHBYTES_32 9e2849b90a2353691fccedd467215c88eec89a5d0dcf468e6cf37abed344d746
+OP_CHECKSIG
+OP_0
+OP_IF
+OP_PUSHBYTES_3 6f7264
+OP_PUSHBYTES_1 01
+OP_PUSHBYTES_24 746578742f706c61696e3b636861727365743d7574662d38
+OP_0
+OP_PUSHDATA1 7b200a20202270223a20226272632d3230222c0a2020226f70223a20226465706c6f79222c0a2020227469636b223a20226f726469222c0a2020226d6178223a20223231303030303030222c0a2020226c696d223a202231303030220a7d
+OP_ENDIF
+```
+La lecture va se faire exclusivement avec [CyberChef](https://gchq.github.io/CyberChef/#recipe=From_Hex('Auto')). 
+
+L'`OP_PUSHBYTES32 ...` et l'`OP_CHECKSIG` ne nous intéresse pas pour l'étude de l'inscription. Libre à vous d'aller *dig* sur cette partie. 
+
+On commence donc avec : `OP_PUSHBYTES_3 6f7264`, `6f7264` donne bien `ord` [ord | CyberChef](https://gchq.github.io/CyberChef/#recipe=From_Hex%28%27Auto%27%29From_Base64%28%27A-Za-z0-9%2B%2F%3D%27,false,false/disabled%29From_Hexdump%28/disabled%29&input=NmY3MjY0).
+
+Ensuite on récupère le type de fichier avec : `OP_PUSHBYTES_24 746578742f706c61696e3b636861727365743d7574662d38`, `746578742f706c61696e3b636861727365743d7574662d38` donne bien comme attendu : `text/plain;charset=utf-8` [text/plain | CyberChef](https://gchq.github.io/CyberChef/#recipe=From_Hex%28%27Auto%27%29From_Base64%28%27A-Za-z0-9%2B%2F%3D%27,false,false/disabled%29From_Hexdump%28/disabled%29&input=NzQ2NTc4NzQyZjcwNmM2MTY5NmUzYjYzNjg2MTcyNzM2NTc0M2Q3NTc0NjYyZDM4)
+
+L'`OP_0` indique que l'on va passer aux données a proprement parler : `OP_PUSHDATA1 7b200a20202270223a20226272632d3230222c0a2020226f70223a20226465706c6f79222c0a2020227469636b223a20226f726469222c0a2020226d6178223a20223231303030303030222c0a2020226c696d223a202231303030220a7d` qui donne : 
+```
+{ 
+  "p": "brc-20",
+  "op": "deploy",
+  "tick": "ordi",
+  "max": "21000000",
+  "lim": "1000"
+}
+```
+
+[deploy inscription | CyberChef](https://gchq.github.io/CyberChef/#recipe=From_Hex%28%27Auto%27%29From_Base64%28%27A-Za-z0-9%2B%2F%3D%27,false,false/disabled%29From_Hexdump%28/disabled%29To_Quoted_Printable%28/disabled%29Defang_URL%28false,false,false,%27Only%20full%20URLs%27/disabled%29URL_Encode%28false/disabled%29URL_Encode%28false/disabled%29&input=N2IyMDBhMjAyMDIyNzAyMjNhMjAyMjYyNzI2MzJkMzIzMDIyMmMwYTIwMjAyMjZmNzAyMjNhMjAyMjY0NjU3MDZjNmY3OTIyMmMwYTIwMjAyMjc0Njk2MzZiICAgIDIyM2EyMDIyNmY3MjY0NjkyMjJjMGEyMDIwMjI2ZDYxNzgyMjNhMjAyMjMyMzEzMDMwMzAzMDMwMzAyMjJjMGEyMDIwMjI2YzY5NmQyMjNhMjAyMjMxMzAzMDMwMjIwYTdk)
+
+On a donc ici récupéré l'inscription `deploy` depuis la transaction Bitcoin `b61b0172d95e266c18aea0c624db987e971a5d6d4ebc2aaed85da4642d635735`.
+
+
+Vous pouvez vous entrainer avec n'importe quelle inscription [ordinals.com](https://ordinals.com). Vous récupérer l'id en enlevant `i0` pour avoir la transaction, vous copiez-collez cela dans l'explorer [mempool.space](https://mempool.space) et vous pouvez vous amuser à déchiffrer le script. 
+
+L'exlporer [ordpool.space](https://ordpool.space) fait tout cela automatiquement.
+
 
 
 [^1]: A ce sujet on notera le protocole [Atomicals](https://github.com/atomicals) (une partie de ce cours sera à l'avenir consacré à Atomicals). Atomicals utilise ce même principe de `OP_IF`...`OP_ENDIF` mais rempli cet "empaquetage" différememnt. 
 
 [^2]: On notera que l'id d'une inscription est donnée par [txid]i0. Le i0 detérmine l'input, on peut avoir autre chose que i0 mais la plupart sont avec i0. Si on a plusieurs inputs on aura i1, i2,... . Mais la construction de l'id de l'inscription reste la même. 
+
+
+##### Discussion des metadata
+
+Une fonctionnalité ajoutée et intégrée assez récemment ([(Oct. 2023) commit metadata](https://github.com/ordinals/ord/commit/aeb5f558bbedb0a7ddd095cee2f3ed0b4b495718)
+) est la gestion des [metadatas](https://docs.ordinals.com/inscriptions/metadata.html). On verra en [3.](#3) comment cela s'applique à la ligne de commande. 
+
+Ici on va se concentrer sur l'enveloppe proposée avec la transaction Bitcoin elle-même. 
+
 
 ####	c) Le code
 
@@ -455,7 +508,21 @@ Le but n'est pas d'analyser TOUT le code mais détailler quelques fonction impor
 > Pour les dev, ce fichier `inscribe.rs` doit pouvoir être modifié modéremment sans impacter le reste du programme client `ord`. Par exemple, les fees utilisés pour réaliser les transactions doivent pouvoir être modifié.
 Une discussion approfondie avec des tests d'implémentation avancées pourrait être intéressante.
 
+
+Pour les opérations : 
+```
+- content_type, with a tag of 1, whose value is the MIME type of the body.
+- pointer, with a tag of 2, see pointer docs.
+- parent, with a tag of 3, see provenance.
+- metadata, with a tag of 5, see metadata.
+- metaprotocol, with a tag of 7, whose value is the metaprotocol identifier.
+- content_encoding, with a tag of 9, whose value is the encoding of the body.
+- delegate, with a tag of 11, see delegate.
+```
+
+
 ### 3) Le client
+[//]: # (3)
 
 La référence pour cette partie est cette vidéo : [How To Setup A Bitcoin Node & Ord Wallet](https://www.youtube.com/watch?v=tdC8kmjn5N0&list=LL&index=1&t=0s)
 Cette vidéo est faites sur Windows et étant sur Mac avec un node sur Disque dur externe je proposerai les commandes pour setup ceci sur Linux et Mac.
