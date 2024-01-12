@@ -403,7 +403,8 @@ Le `OP_FALSE`, sert à terminer le script précédent l'inscription. On peut not
 L'`OP_CODE` `OP_IF` ... `OP_ENDIF` correspond au coeur du protocole Ordinals. En effet, grâce à cela on va pouvoir "empaqueter" de la data dans notre transaction qui sera : gravée dans la transaction, facilement "transportable" et "interprétable" ainsi que très personalisable. Ordinals est UNE proposition d'utilisation de ce `OP_IF`...`OP_ENDIF` mais il peut y avoir bien d'autres [^1]. 
 
 
-
+Ensuite, on utilise une succession de `OP_PUSH` traduite dans Bitcoin par : `OP_PUSHBYTExx` où xx est un nombre calculé en fonction de la longueur de la chaîne de caractères. 
+Dans Bitcoin on a deux `OP_CODE` qui représente expressément `OP_PUSH 1` et `OP_PUSH 0` : `OP_1` et `OP_0`. Cela est important car il permet de séparer les données entre-elles. Cela est important pour indexer les données inscrites via Ordinals. 
 
 
 [^1] : A ce sujet on notera le protocole [Atomicals](https://github.com/atomicals) (une partie de ce cours sera à l'avenir consacré à Atomicals). Atomicals utilise ce même principe de `OP_IF`...`OP_ENDIF` mais rempli cet "empaquetage" différememnt. 
@@ -840,16 +841,23 @@ Une série d'annexes évolutives pour clarifier certains points de ce cours.
 
 - <u>**sat**</u> : Un satoshi (ou sat) est la plus unité de Bitcoin 1 sat = $10^{-8}$ BTC ;
 
+-<u>**Virtual Bytes**</u> : Abrégé en vBytes ou vB cela correspond à la méthode de calcul actuel de la taille d'une transaction. On l'équivalence : 1 vB = 4 Bytes (octets en fr). Les frais (fees) sur Bitcoin sont calculés en sats/vB. Autrement dit pour une transaction pesant 400 Bytes elle pesera sur Bitcoin 100 vB, avec un taux à 40 sats/vB cela coutera donc : 4 000 sats (~ 2€ actuellement) ;
 
-- <u>**Protocole**</u> : J'appelle Protocole tout ensemble de règles suivies par un réseaux et permettant de produire un service. Concrètement ce sont des règles qui permettront en étant respectées de faire *quelque chose* : produire un token, inscrire de la data, donner des droits, etc ; 
+- <u>**Protocole**</u> : J'appelle Protocole tout ensemble de règles suivies par un réseaux et permettant de produire un service. Concrètement ce sont des règles qui permettront en étant respectées de faire *quelque chose* : produire un token, inscrire de la data, donner des droits, etc. Il est à noté qu'un protocole ne dépend pas d'un langage car ce sont des règles. On parle alors d'implémentation du protocole (ou de client). Bitcoin est un protocole ! Il existe plusieurs clients Bitcoin permettant d'intéragir avec le protocole mais le principal utilisé étant [Bitcoin Core](https://github.com/bitcoin/bitcoin). Pour un détail peu clair des clients actuellement utilisés :  [Coin Dance | Bitcoin Blocks (historical) Summary](https://coin.dance/blocks/historical) ; 
+
+- <u>**Indexer**</u> : Algorithme permettant de lire les données associées à un protocole. Une fois récupérées via un indexer, il suffit alors de les afficher dans un format "user-friendly". Ces données étant assez brutes on sait créer un indexer avec n'importe quel language (car les règles sont écrites en langage humain) et peut sortir les données dans ni'mporte quel format. En général, les données indexées ont quand même une structure et on essaye de la conserver. 
+
+-<u>**Explorer**</u> : Un explorer est un site web permettant de visualiser des opérations réalisées dans un protocole donné. On voit que l'explorer va de pair avec l'indexer. L'explorer Bitcoin principal étant [mempool.space](https://mempool.space), l'explorer ordinals officiel est [ordinals.com](https://ordinals.com) et un très bon exploreur Bitcoin + Oridnals est : [ordpool.space](https://ordpool.space) ;
 
 - <u>**Scrip**t</u> : Un script est une suite d'instruction exécutant des opérations sur une adresse. Le script est écrit en [`OP_CODE`](https://wiki.bitcoinsv.io/index.php/Opcodes_used_in_Bitcoin_Script). Le script Bitcoin, comme les scripts en général n'est pas un langage [Turing complet](https://fr.wikipedia.org/wiki/Turing-complet#:~:text=6.1%20Articles%20connexes-,Langages%20de%20programmation%20Turing%2Dcomplets,de%20la%20m%C3%A9moire%20des%20ordinateurs), c'est-à-dire qu'on ne peut pas programmer toute les [fonctions calculables](https://fr.wikipedia.org/wiki/Fonction_r%C3%A9cursive). Autrement dit, il manque des briques pour programmer tout ce qu'on veut. En opposition, [Solidity](https://soliditylang.org/) est un langage Turing-complet ; 
+
 
 - <u>**OP_CODE**</u> : Ensembles d'opérations disponibles dans Bitcoin pour réaliser des opérations algorithmiques complexes ; 
 
 - <u>**Inscriptions**</u> : Données stockées dans une transaction Bitcoin ;
 
 - <u>**JSON-based protocol**</u> : J'appelle comme cela les protocoles comme `brc20` et `sns`. Ce sont des protocoles définit et agissant via des fichiers JSON inscrits sur Bitcoin via Ordinals. Attention : cbrc20 n'est pas un JSON-based protocol car il repose sur les metadata dans le protocole Ordinals.
+
 
 <!--
 - <u>****</u>
@@ -861,3 +869,4 @@ Une série d'annexes évolutives pour clarifier certains points de ce cours.
 
 > [Inscriptions documentation officielle](https://docs.ordinals.com/inscriptions.html)
 
+> [ordpool.space | Explorer Bitcoin + Visualisation txs Ordinals](https://ordpool.space)
