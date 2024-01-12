@@ -189,6 +189,7 @@ Jusqu'à récemment en ajouter encore le 29 juin 2023 :
 
 
  <img src="./assets/last_wizard.webp" alt="lastWizard" width="450" height="450">
+ 
 [*Inscription #14,163,842*](https://ord.link/14163842)
 
 Plus qu'un simple projet, ils sont un symbole des débuts d'Ordinals et de bitcoin sur reddit et Internet !
