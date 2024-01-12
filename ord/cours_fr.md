@@ -180,11 +180,12 @@ Les chiffres sur Taproot Wizard peuvent être trouvés sur [OXALUS.io](https://o
 Pour une [description](https://unisat.io/market/collection?collectionId=bitcoin-wizards) : Taproot Wizard est un projet Ordinal NFT célébrant le 10ème anniversaire de la collection originale Bitcoin Wizard créée par mavensbot. Magic Internet Money est une publicité iconique du subreddit bitcoin. Créé le lundi 18 février 2013 par u/mavensbot, c'est rapidement devenu la pub la plus populaire de reddit. 
 mavensbot est le père de Magic Internet Money: Bitcoin Wizard.
 
-![]()
 [*Inscription #652*](https://ord.link/652)
  <img src="./assets/first_wizard.jpg" alt="firstWizard" width="450" height="450">
+
+
+
 Jusqu'à récemment en ajouter encore le 29 juin 2023 : 
-![]()
  <img src="./assets/last_wizard.webp" alt="lastWizard" width="450" height="450">
 [*Inscription #14,163,842*](https://ord.link/14163842)
 
