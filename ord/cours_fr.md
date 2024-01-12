@@ -148,7 +148,7 @@ Entrons vers les premières publications faites par Casey Rodarmor avant de dét
 
 Avec le commit d'initialisation du README le 12 Décembre 2021 : [Premier commit](https://github.com/ordinals/ord/commit/4ee262e3456b82120f20474ee89eab22930ac0fe)
 
-<img src="./assets/init_commit.png" alt="init" width="600" height="400">
+<img src="./assets/init_commit.png" alt="init" width="700" height="400">
 On pourra retrouver le premier README [ici](./assets/first_README.md).
 
 On voit donc un travail pensé pendant un an par Casey avant sa [présentation](https://www.coindesk.com/consensus-magazine/2023/02/23/casey-rodarmor-why-i-developed-the-ordinals-bitcoin-nft-project-coindesk/) en Octobre 2022, sur laquelle nous reviendrons.
