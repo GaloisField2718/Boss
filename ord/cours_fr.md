@@ -143,18 +143,18 @@ Entrons vers les premières publications faites par Casey Rodarmor avant de dét
 
 ####	a) Une première publication
 
-<img src="./assets/Create_ord_casey.png" alt="creation ord" width="600" height="400">
+<img src="./assets/Create_ord_casey.png" alt="creation ord" width="450" height="300">
 *Cette information n'est plus disponible sur le profil de Casey (prise le 22/05/23).*
 
 Avec le commit d'initialisation du README le 12 Décembre 2021 : [Premier commit](https://github.com/ordinals/ord/commit/4ee262e3456b82120f20474ee89eab22930ac0fe)
 
-<img src="./assets/init_commit.png" alt="init" width="700" height="400">
+<img src="./assets/init_commit.png" alt="init" width="500" height="200">
 On pourra retrouver le premier README [ici](./assets/first_README.md).
 
 On voit donc un travail pensé pendant un an par Casey avant sa [présentation](https://www.coindesk.com/consensus-magazine/2023/02/23/casey-rodarmor-why-i-developed-the-ordinals-bitcoin-nft-project-coindesk/) en Octobre 2022, sur laquelle nous reviendrons.
 
 On voit la première release [0.0.1](https://github.com/ordinals/ord/commit/da839875b9500d769e2877f6702978bd49391669) le 5 juin 2022.
-<img src="./assets/0.0.1_casey.png" alt="0.0.1" width="300" height="200">
+<img src="./assets/0.0.1_casey.png" alt="0.0.1" width="500" height="200">
 
 ####	b) La présentation by Casey
 -> [Ordinals Workshop with Casey Rodarmor](https://www.youtube.com/watch?v=MC_haVa6N3I)
@@ -180,11 +180,12 @@ Les chiffres sur Taproot Wizard peuvent être trouvés sur [OXALUS.io](https://o
 Pour une [description](https://unisat.io/market/collection?collectionId=bitcoin-wizards) : Taproot Wizard est un projet Ordinal NFT célébrant le 10ème anniversaire de la collection originale Bitcoin Wizard créée par mavensbot. Magic Internet Money est une publicité iconique du subreddit bitcoin. Créé le lundi 18 février 2013 par u/mavensbot, c'est rapidement devenu la pub la plus populaire de reddit. 
 mavensbot est le père de Magic Internet Money: Bitcoin Wizard.
 
-![firstWizard](./assets/first_wizard.jpg)
+![]()
 [*Inscription #652*](https://ord.link/652)
- 
+ <img src="./assets/first_wizard.jpg" alt="firstWizard" width="450" height="450">
 Jusqu'à récemment en ajouter encore le 29 juin 2023 : 
-![lastWizard](./assets/last_wizard.webp)
+![]()
+ <img src="./assets/last_wizard.webp" alt="lastWizard" width="450" height="450">
 [*Inscription #14,163,842*](https://ord.link/14163842)
 
 Plus qu'un simple projet, ils sont un symbole des débuts d'Ordinals et de bitcoin sur reddit et Internet !
@@ -203,7 +204,7 @@ Les degens ont continués leur périple....
 **NOTES :** *Bitcoin-dev-digest, Vol 99, Issue45*\
 "Please correct me if I'm wrong, but I believe Counterparty has, in the past, encoded their data within public key data, so this concern is not hypothetical." de Russell O'Connor \<roconnor@blockstream.com\>
 
-![bitcoin-digest](assets/bitcoin-digest_counter_party.jpg)
+ <img src="./assets/bitcoin-digest_counter_party.jpg" alt="bitcoin-digest" width="450" height="450">
 
 #### 	b) Les colored coins (2014)
 
@@ -236,10 +237,11 @@ A nous de chercher et d'indexer pour leur rendre hommage ;)
 ####	a) Github
 [Contributors to ordinals/ord](https://github.com/ordinals/ord/graphs/contributors)
 
-![core1](./assets/core_team1.png)
-![core2](./assets/core_team2.png)
-![core3](./assets/core_team3.png)
+ <img src="./assets/core_team1.png" alt="core1" width="250" height="300">
 
+<img src="./assets/core_team2.png" alt="core2" width="250" height="300">
+
+<img src="./assets/core_team3.png" alt="core3" width="250" height="300">
 
 ####	b) Twitter
 
