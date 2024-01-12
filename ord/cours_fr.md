@@ -143,18 +143,18 @@ Entrons vers les premières publications faites par Casey Rodarmor avant de dét
 
 ####	a) Une première publication
 
-![creation ord](./assets/Create_ord_casey.png)
+<img src="./assets/Create_ord_casey.png" alt="creation ord" width="300" height="200">
 *Cette information n'est plus disponible sur le profil de Casey (prise le 22/05/23).*
 
 Avec le commit d'initialisation du README le 12 Décembre 2021 : [Premier commit](https://github.com/ordinals/ord/commit/4ee262e3456b82120f20474ee89eab22930ac0fe)
-![init](./assets/init_commit.png)
 
+<img src="./assets/init_commit.png" alt="init" width="300" height="200">
 On pourra retrouver le premier README [ici](./assets/first_README.md).
 
 On voit donc un travail pensé pendant un an par Casey avant sa [présentation](https://www.coindesk.com/consensus-magazine/2023/02/23/casey-rodarmor-why-i-developed-the-ordinals-bitcoin-nft-project-coindesk/) en Octobre 2022, sur laquelle nous reviendrons.
 
 On voit la première release [0.0.1](https://github.com/ordinals/ord/commit/da839875b9500d769e2877f6702978bd49391669) le 5 juin 2022.
-![0.0.1](./assets/0.0.1_casey.png)
+<img src="./assets/0.0.1_casey.png" alt="0.0.1" width="300" height="200">
 
 ####	b) La présentation by Casey
 -> [Ordinals Workshop with Casey Rodarmor](https://www.youtube.com/watch?v=MC_haVa6N3I)
