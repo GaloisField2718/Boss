@@ -818,7 +818,7 @@ Une série d'annexes évolutives pour clarifier certains points de ce cours.
 #### Références 
 
 > Cryptographie : Dans le commit [@15ed05](https://github.com/ordinals/ord/commit/15ed050d59de6e0f1d581de5a92e3809d0069b0c) il ajouta le package pour la gestion de la signature de Schnorr via `secp256k1` au fichier `main.rs`
-![schnorr](add_schnorr.png)
+![schnorr](https://assets-global.website-files.com/5f75fe1dce99248be5a892db/65675d9184b6e14799543eb9_6552522ea592a6c95fb7ea99_6524562a3a64ae68224a1269_ECDSA-vs-Schnorr-Signatures-Diagram.png)
 
 > [Inscriptions documentation officielle](https://docs.ordinals.com/inscriptions.html)
 
