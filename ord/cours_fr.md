@@ -7,7 +7,7 @@ Pour ce faire je propose ci-dessous une base de cours la plus complète possible
 Ce cours me semble essentiel dans l'écosystème Bitcoin, à l'heure de *RGB*, [RGB Protocol on Bitcoin, What is it? | Trust Machines](https://trustmachines.co/learn/what-is-the-rgb-protocol-on-bitcoin/#:~:text=The%20RGB%20network%20is%20a,assets%20on%20the%20Bitcoin%20blockchain.), des annonces de *Ark*, [Bitcoin Developer Introduces New Layer 2 Protocol Ark - Bitcoin Magazine - Bitcoin News, Articles and Expert Insights](https://bitcoinmagazine.com/technical/bitcoin-developer-introduces-new-layer-2-protocol-ark) et une marketcap d'Ordinals estimée à $55,393,093 [Bitcoin Ordinals Analysis](https://dune.com/dgtl_assets/bitcoin-ordinals-analysis).
 Comprendre ce nouveau protocole et surtout les derniers développements basés sur ce protocole me semble capital !
 
-Vous trouverez ci-dessous le sommaire, suivi d'un plan détaillé et des parties qui doivent être creusées.
+Vous trouverez ci-dessous le sommaire, suivi d'un plan détaillé et des parties qui doivent être creusées. Vous trouverez également une partie [vocabulaire](#vocabulaire) qui pourra être complétée avec le temps afin de rendre ce cours le plus clair et accessible possible. 
 
 Je suis disponible pour toutes questions, critiques ou retour de votre part sur ce repo ou par mail : galoisfield2718@gmail.com.
 
@@ -66,8 +66,13 @@ Je suis disponible pour toutes questions, critiques ou retour de votre part sur 
 
 
 
-## Annexe A : Utilisation offline du site iancoleman.com pour la génération d'adresse bech32.
-## Annexe B : Rédaction de script avec `bitcoin-cli`
+## Annexes 
+
+### Vocabulaire
+### Références
+
+### Annexe A : Utilisation offline du site iancoleman.com pour la génération d'adresse bech32.
+### Annexe B : Rédaction de script avec `bitcoin-cli`
 
 
 ![skull](./assets/greenpeace_skull.png)
@@ -200,7 +205,22 @@ Les degens ont continués leur périple....
 
 #### 	b) Les colored coins (2014)
 
+Un article intéressant à ce sujet [Colored Coins, What They Are and How They Work On The Bitcoin Blockchain | Bitcoinist.com](https://bitcoinist.com/colored-coins-work-bitcoin-blockchain/).
+
+
+Un explorer qui n'est plus displonible mais accessible via [Wayback Machine](https://web.archive.org/) : [coinprism](https://web.archive.org/web/20150213225601/https://www.coinprism.info/assets).
+
+Il faut enquêter sur la visualisation de ces transactions. Sur le site de coinprism on ne trouve que des adresses de la forme : `AJxuLADi8stt7DpKEedhFEqCuB9dcV1EZd` qui ne sont ni des transactions, ni des adresses Bitcoin. 
+
+
 #### 	c) Ethreum et les ABI (2015)
+
+Les ABI (Application Binary Interface) sont les fichiers JSON représentant le contrat déployé sur Ethereum. Ces ABI sont utilisés par les interfaces `javascript`, `typescript` et autres pour permettre à l'utilisateur d'intéragir avec les contrats ETH. 
+
+<u> Remarque </u> : Il faudrait détailler l'usage des ABIs, leur intérêt et leur utilisation. 
+
+**Question** : Peut-on associé ces JSON au JSON-based protocol ([Vocabulaire](#vocabulaire)) sur Ordinals ?
+
 
 ### 3) La core Team
 
@@ -379,6 +399,16 @@ Lisons un peu ceci pour clarifier ce script et allons regarder ensuite dans [mem
 
 
 Le `OP_FALSE`, sert à terminer le script précédent l'inscription. On peut noter qu'une inscription est toujours en fin de script (pour un détail sur les script voir [vocabulaire](#vocabulaire)). 
+
+L'`OP_CODE` `OP_IF` ... `OP_ENDIF` correspond au coeur du protocole Ordinals. En effet, grâce à cela on va pouvoir "empaqueter" de la data dans notre transaction qui sera : gravée dans la transaction, facilement "transportable" et "interprétable" ainsi que très personalisable. Ordinals est UNE proposition d'utilisation de ce `OP_IF`...`OP_ENDIF` mais il peut y avoir bien d'autres[^1]. 
+
+
+
+
+
+[^1] : A ce sujet on notera le protocole [Atomicals](https://github.com/atomicals) (une partie de ce cours sera à l'avenir consacré à Atomicals). Atomicals utilise ce même principe de `OP_IF`...`OP_ENDIF` mais rempli cet "empaquetage" différememnt. 
+
+
 
 ####	c) Le code
 
@@ -807,14 +837,23 @@ Une série d'annexes évolutives pour clarifier certains points de ce cours.
 
 [//]: # (vocabulaire)
 
-- <u>**scrip**t</u> : Un script est une suite d'instruction exécutant des opérations sur une adresse. Le script est écrit en [`OP_CODE`](https://wiki.bitcoinsv.io/index.php/Opcodes_used_in_Bitcoin_Script). Le script Bitcoin, comme les scripts en général n'est pas un langage [Turing complet](https://fr.wikipedia.org/wiki/Turing-complet#:~:text=6.1%20Articles%20connexes-,Langages%20de%20programmation%20Turing%2Dcomplets,de%20la%20m%C3%A9moire%20des%20ordinateurs), c'est-à-dire qu'on ne peut pas programmer toute les [fonctions calculables](https://fr.wikipedia.org/wiki/Fonction_r%C3%A9cursive). Autrement dit, il manque des briques pour programmer tout ce qu'on veut. En opposition, [Solidity](https://soliditylang.org/) est un langage Turing-complet. 
 
-- <u>**OP_CODE**</u> : Ensembles d'opérations disponibles dans Bitcoin pour réaliser des opérations algorithmiques complexes. 
-
-- <u>**Inscriptions**</u> : Données stockées dans une transaction Bitcoin.
+- <u>**sat**</u> : Un satoshi (ou sat) est la plus unité de Bitcoin 1 sat = $10^{-8}$ BTC ;
 
 
+- <u>**Protocole**</u> : J'appelle Protocole tout ensemble de règles suivies par un réseaux et permettant de produire un service. Concrètement ce sont des règles qui permettront en étant respectées de faire *quelque chose* : produire un token, inscrire de la data, donner des droits, etc ; 
 
+- <u>**Scrip**t</u> : Un script est une suite d'instruction exécutant des opérations sur une adresse. Le script est écrit en [`OP_CODE`](https://wiki.bitcoinsv.io/index.php/Opcodes_used_in_Bitcoin_Script). Le script Bitcoin, comme les scripts en général n'est pas un langage [Turing complet](https://fr.wikipedia.org/wiki/Turing-complet#:~:text=6.1%20Articles%20connexes-,Langages%20de%20programmation%20Turing%2Dcomplets,de%20la%20m%C3%A9moire%20des%20ordinateurs), c'est-à-dire qu'on ne peut pas programmer toute les [fonctions calculables](https://fr.wikipedia.org/wiki/Fonction_r%C3%A9cursive). Autrement dit, il manque des briques pour programmer tout ce qu'on veut. En opposition, [Solidity](https://soliditylang.org/) est un langage Turing-complet ; 
+
+- <u>**OP_CODE**</u> : Ensembles d'opérations disponibles dans Bitcoin pour réaliser des opérations algorithmiques complexes ; 
+
+- <u>**Inscriptions**</u> : Données stockées dans une transaction Bitcoin ;
+
+- <u>**JSON-based protocol**</u> : J'appelle comme cela les protocoles comme `brc20` et `sns`. Ce sont des protocoles définit et agissant via des fichiers JSON inscrits sur Bitcoin via Ordinals. Attention : cbrc20 n'est pas un JSON-based protocol car il repose sur les metadata dans le protocole Ordinals.
+
+<!--
+- <u>****</u>
+-->
 #### Références 
 
 > Cryptographie : Dans le commit [@15ed05](https://github.com/ordinals/ord/commit/15ed050d59de6e0f1d581de5a92e3809d0069b0c) il ajouta le package pour la gestion de la signature de Schnorr via `secp256k1` au fichier `main.rs`
