@@ -341,6 +341,10 @@ Techniquement il est utilisé une double tx de commit puis de reveal. Cela vient
 L'utilisation de la witness en native a dût se faire à partir du commit [Add commands to mint and verify NFTs (#211) · ordinals/ord@15ed050](https://github.com/ordinals/ord/commit/15ed050d59de6e0f1d581de5a92e3809d0069b0c). Elle se fait via l'utilisation de la nouvelle classe `Witness` depuis `blockdata` de la librairie rust [bitcoin](https://docs.rs/bitcoin/latest/bitcoin/).
 ![index.rs](index.rs_0.0.0_witness_integration.png)
 
+Pour pouvoir inscrire sur Bitcoin il va nous falloir une enveloppe qui sera contenue dans la transaction et sera attaché au script dans la transaction. Cela étant, on va pouvoir transférer d'adresses en adresses ce script attaché à la transaction et qui représentera l'inscription. Techniquement cela stocké dans le `scriptPubKey` associé à l'[utxo (unspent transaction output)](https://academy.bit2me.com/fr/que-es-una-utxo/).
+
+<u>Remarque</u> : Désolé pour les termes barbares, mais ce sont les termes exacts qu'il suffit de retenir pour saisir pleinement le concept d'inscription. 
+
 
 ####	b) La pratique
 
@@ -357,6 +361,24 @@ Néanmoins, suite à une inscription avec le client `ord` on obtient une sortie 
 }
 
 ```
+
+En pratique l'[enveloppe](https://docs.ordinals.com/inscriptions.html) est de la forme : 
+
+```
+OP_FALSE
+OP_IF
+  OP_PUSH "ord"
+  OP_PUSH 1
+  OP_PUSH "text/plain;charset=utf-8"
+  OP_PUSH 0
+  OP_PUSH "Hello, world!"
+OP_ENDIF
+```
+
+Lisons un peu ceci pour clarifier ce script et allons regarder ensuite dans [mempool.space](https://mempool.space) à quoi cela ressemble en pratique. 
+
+
+Le `OP_FALSE`, sert à terminer le script précédent l'inscription. On peut noter qu'une inscription est toujours en fin de script (pour un détail sur les script voir [vocabulaire](#vocabulaire)). 
 
 ####	c) Le code
 
@@ -777,9 +799,26 @@ Ce cours bien qu'autant exhaustif que possible est loin de tout couvrir et néce
 
 
 
-### Annexe
+### Annexes
 
+Une série d'annexes évolutives pour clarifier certains points de ce cours.
+
+#### Vocabulaire
+
+[//]: # (vocabulaire)
+
+- <u>**scrip**t</u> : Un script est une suite d'instruction exécutant des opérations sur une adresse. Le script est écrit en [`OP_CODE`](https://wiki.bitcoinsv.io/index.php/Opcodes_used_in_Bitcoin_Script). Le script Bitcoin, comme les scripts en général n'est pas un langage [Turing complet](https://fr.wikipedia.org/wiki/Turing-complet#:~:text=6.1%20Articles%20connexes-,Langages%20de%20programmation%20Turing%2Dcomplets,de%20la%20m%C3%A9moire%20des%20ordinateurs), c'est-à-dire qu'on ne peut pas programmer toute les [fonctions calculables](https://fr.wikipedia.org/wiki/Fonction_r%C3%A9cursive). Autrement dit, il manque des briques pour programmer tout ce qu'on veut. En opposition, [Solidity](https://soliditylang.org/) est un langage Turing-complet. 
+
+- <u>**OP_CODE**</u> : Ensembles d'opérations disponibles dans Bitcoin pour réaliser des opérations algorithmiques complexes. 
+
+- <u>**Inscriptions**</u> : Données stockées dans une transaction Bitcoin.
+
+
+
+#### Références 
 
 > Cryptographie : Dans le commit [@15ed05](https://github.com/ordinals/ord/commit/15ed050d59de6e0f1d581de5a92e3809d0069b0c) il ajouta le package pour la gestion de la signature de Schnorr via `secp256k1` au fichier `main.rs`
 ![schnorr](add_schnorr.png)
+
+> [Inscriptions documentation officielle](https://docs.ordinals.com/inscriptions.html)
 
