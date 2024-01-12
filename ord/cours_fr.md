@@ -400,7 +400,7 @@ Lisons un peu ceci pour clarifier ce script et allons regarder ensuite dans [mem
 
 Le `OP_FALSE`, sert à terminer le script précédent l'inscription. On peut noter qu'une inscription est toujours en fin de script (pour un détail sur les script voir [vocabulaire](#vocabulaire)). 
 
-L'`OP_CODE` `OP_IF` ... `OP_ENDIF` correspond au coeur du protocole Ordinals. En effet, grâce à cela on va pouvoir "empaqueter" de la data dans notre transaction qui sera : gravée dans la transaction, facilement "transportable" et "interprétable" ainsi que très personalisable. Ordinals est UNE proposition d'utilisation de ce `OP_IF`...`OP_ENDIF` mais il peut y avoir bien d'autres[^1]. 
+L'`OP_CODE` `OP_IF` ... `OP_ENDIF` correspond au coeur du protocole Ordinals. En effet, grâce à cela on va pouvoir "empaqueter" de la data dans notre transaction qui sera : gravée dans la transaction, facilement "transportable" et "interprétable" ainsi que très personalisable. Ordinals est UNE proposition d'utilisation de ce `OP_IF`...`OP_ENDIF` mais il peut y avoir bien d'autres [^1]. 
 
 
 
