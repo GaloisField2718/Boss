@@ -974,3 +974,5 @@ Une série d'annexes évolutives pour clarifier certains points de ce cours.
 > [ordpool.space | Explorer Bitcoin + Visualisation txs Ordinals](https://ordpool.space)
 
 > [Décompiler une transaction avec image](https://twitter.com/Blockcryptology/status/1708454640373686299)
+
+> [Script - Bitcoin Wiki](https://en.bitcoin.it/w/index.php?title=Script&oldid=69733)
