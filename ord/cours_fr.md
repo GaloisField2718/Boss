@@ -21,6 +21,7 @@ Je suis disponible pour toutes questions, critiques ou retour de votre part sur 
 ####	a) Une première publication
 ####	b) La présentation by Casey
 ####	c) L'arrivée des degens et des techos
+####    d) Décalaration d'Open Ordinals Institute©️  et changements
 ### 2) Des idées anciennes, remises au goût du jour
 #### 	a) Les colored coins
 #### 	b) Counterparty
@@ -198,6 +199,13 @@ Cette collection a ramenée les premières liquidités nécessaires au développ
 
 Les degens ont continués leur périple....
 
+Aujourd'hui de nombreuses collections s'échangent à prix d'or. On a vu réapparaitre les [cryptopunks](https://www.larvalabs.com/cryptopunks) sur Bitcoin, les [Bitcoin Punks](https://bitcoinpunks.com/), naître les [Bitcoin Frogs](https://twitter.com/BitcoinFrogs) ou même Pepe revenir en force. Néanmoins, la vague dégens de l'arrivée ne semble plus être ici pour l'instant. L'arrivée des brc-20 à changer le paysage...
+
+
+
+#### d) Décalaration d'Open Ordinals Institute©️  et changements
+[Open Ordinals Institute on X: "The Ordinals protocol team is proud to announce the launch of the Open Ordinals Institute, a 501(c)(3) non-profit organization to foster the growth and advancement of the Bitcoin Ordinals protocol. Donations can be made at our website: https://t.co/H7ymKSL4VR" / X](https://twitter.com/ordinalsorg/status/1686435373780746242)
+
 
 ### 2) Des idées anciennes, remises au goût du jour
 
@@ -205,10 +213,16 @@ Les degens ont continués leur périple....
 
 #### 	a) Counter Party (2012)
 
+[Counterparty](https://counterparty.io/) est un protocole sur Bitcoin qui s'est développé depuis 2012. Beaucoup en auraient retenus les degens à ce moment là. Il a néanmoins continuer et il est aujourd'hui une des briques d'[elements](https://github.com/ElementsProject/elements). Ceci en est un bon exemple car [elements](https://github.com/ElementsProject/elements) veut permettre aux entreprises ou aux réseau de construire des sides-chains, indexée à Bitcoin. Un service qui se développe sur ce réseau est par exemple : [liquid network](https://liquid.net/). Un réseau qui est donc construit comme une "side-chain" reposant sur Bitcoin.
+
+On voit donc ici quelques idées possibles via l'arrivée d'un nouveau protocole. Cela est arrivé il y 12 ans. 
+[Ordinals vient de fêter ses un an](https://twitter.com/realizingerin/status/1735272834321326090) récemment.
+
 **NOTES :** *Bitcoin-dev-digest, Vol 99, Issue45*\
 "Please correct me if I'm wrong, but I believe Counterparty has, in the past, encoded their data within public key data, so this concern is not hypothetical." de Russell O'Connor \<roconnor@blockstream.com\>
 
  <img src="./assets/bitcoin-digest_counter_party.jpg" alt="bitcoin-digest" width="450" height="450">
+
 
 #### 	b) Les colored coins (2014)
 
@@ -226,7 +240,7 @@ Les ABI (Application Binary Interface) sont les fichiers JSON représentant le c
 
 <u> Remarque </u> : Il faudrait détailler l'usage des ABIs, leur intérêt et leur utilisation. 
 
-**Question** : Peut-on associé ces JSON au JSON-based protocol ([Vocabulaire](#vocabulaire)) sur Ordinals ?
+**Question** : Peut-on associer ces JSON aux JSON-based protocols ([Vocabulaire](#vocabulaire)) sur Ordinals ?
 
 
 ### 3) La core Team
@@ -333,9 +347,15 @@ def assign_ordinals(block):
 Casey a choisit de nommer les sats en les numérotants.
 
 Il a également ajouté des "steps" en plus du halving avec les cycles et autres pour créer de la rareté sur certains sats.
-Il a créé un classement de sats rares que l'on peut voir détaillé [ici](https://docs.ordinals.com/overview.html).
+Il a créé un classement de sats rares que l'on peut voir [ici](https://docs.ordinals.com/overview.html). Pour plus de détails sur les sats rares vous pouvez consulter [c) A la recherche des sats rares](#c).
 
-Les raretés initiales étant : 
+Le comptage des sats fait partie des choix de Casey. Récemment, des discussions ont eu lieu pour savoir si l'on devait choisir le premier sat de l'utxo ou le dernier comme celui contenant l'inscription. 
+
+
+[//](#c)
+####	c) A la recherche des sats rares
+
+Les raretés initiales (historiques) étant : 
 - `common`: Tous les sats qui ne sont pas les premiers de leur bloc.
 - `uncommon`: Le premier sat de chaque bloc.
 - `rare`: Le premier sat de chaque ajustement de difficulté.
@@ -343,16 +363,26 @@ Les raretés initiales étant :
 - `legendary`: Le premier sat de chaque cycle.
 - `mythic`: Le premier sat du genesis bloc (Unique !).
 
-Néanmoins de nouvelles raretés sont apparus notamment chez [sating](https://sating.io) : 
+
+Néanmoins de nouvelles raretés sont apparus ! Vous pouvez notamment consulter le bon résumé dans le thread de [@@0xBes](https://twitter.com/0xBes) : [Thread: Categorization of Rare Satoshis 💎](https://x.com/0xBes/status/1739987968922632240?s=20). 
+
+Depuis [sating](https://sating.io) : 
 
  <img src="./assets/sats_rarity.png" alt="satsRarity" width="350" height="300">
 
-####	c) A la recherche des sats rares
+On peut voir qu'aujourd'hui la recherche et l'étude des rares sats devient une discipline : [la satologie](https://x.com/ZedZeroth/status/1710287026061267348?s=20).
+
+
+**Pour les chercher** :
 
 Pour une recherche à la main dans Sparrow Wallet on a [Franken | How to find and extract rare sats from your Bitcoin wallet!](https://www.youtube.com/watch?v=4Gro5AmFdfY).
-Outils online le plus facile. On donne son adresse et ils l'analysent : [Sat scanner | sating](https://sating.io/).
-
 Il est possible de le faire par ligne de commande via la [documentation officielle | 7.3 Sat Hunting](https://docs.ordinals.com/guides/sat-hunting.html). Je ne l'ai pas encore testé. 
+
+Evidemment, le plus facile est online ! De plus en plus d'outils intégrent aujourd'hui la visualisation des sats rares. Des nouvelles catégories arrivent régulièrement donc il faut vous tenir à jour à ce propos. 
+
+[Sat scanner | sating](https://sating.io/), un des premiers outils pour le faire.
+
+
 
 
 ### 2) L'inscription
@@ -940,6 +970,7 @@ Une série d'annexes évolutives pour clarifier certains points de ce cours.
 
 [//]: # (vocabulaire)
 
+- <u>**degens**</u> : Abréviation de degenerates (dégénérés). Ils référent à ceux qui mettent de grosses quantités de BTC sur des choses nouvelles, souvent encore incomprises. Ils participent au financement des premiers développement et dévèrse une grande quantité de liquidité sur le marché qui émerge. On les retrouve moins sur des marchés dits "plus mature" mais sont toujours bien présent en étant moins puissants car moins nombreux.
 
 - <u>**sat**</u> : Un satoshi (ou sat) est la plus unité de Bitcoin 1 sat = $10^{-8}$ BTC ;
 
@@ -976,3 +1007,12 @@ Une série d'annexes évolutives pour clarifier certains points de ce cours.
 > [Décompiler une transaction avec image](https://twitter.com/Blockcryptology/status/1708454640373686299)
 
 > [Script - Bitcoin Wiki](https://en.bitcoin.it/w/index.php?title=Script&oldid=69733)
+
+
+##### Pour aller plus loin
+
+
+- [7 Required Steps To Secure Your iFrames – Reflectiz](https://www.reflectiz.com/blog/iframe-security/#:~:text=The%20main%20security%20threat%20of,and%20keystrokes%20through%20an%20iFrame.). We need to keep in mind that `https://ordinals.com/inscription/inscription_id/content` provide the execution of the content through an IFrame. The code will be embedded into IFrame tags. What if I give you an url from ordinals content ? In that case, ordinals.com could host attacks... We need to think about it.
+
+
+
