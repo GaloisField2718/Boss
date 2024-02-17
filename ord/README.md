@@ -1,6 +1,7 @@
 # Cours général sur le protocole Ordinal
 
 Ce cours n'est pas terminé et n'est disponible qu'en français actuellement. 
+**Le contenu de ce dossier est soumis à la license GNU-GPL v3.** Autrement dit, si vous souhaitez modifier ce dossier vous devez le redistribuer en Open-Source et citer l(es) auteur(s). 
 
 ## Son but ? 
 
