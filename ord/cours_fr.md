@@ -1,3 +1,9 @@
+<!--
+Author: GaloisField
+This content is under GNU-GPL v3 license. 
+If you modify this course you have to redistribute this and cite author(s) and contributor(s)!
+-->
+
 # Cours sur les Ordinals
 
 *Ordinals* est un nouveau protocole construit sur Bitcoin qui apporte de nouvelles opportunités, de nouveaux risques et de belles promesses. 
