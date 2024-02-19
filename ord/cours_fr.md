@@ -97,6 +97,7 @@ C'EST UN **PROTOCOLE SUR BITCOIN** !
 *Comment ça ?*
 
 Dans une transaction Bitcoin on peut mettre un message.
+-> Une transaction Bitcoin est un message
 Ce message doit respecter une certaine structure et utiliser des "fonctions" du protocole Bitcoin.
 Ces "fonctions" sont appelées des <u>opérations</u>. L'ensemble de ces opérations est appelé l'`OP_CODE`.
 Ces opérations sont envoyées au *réseau Bitcoin* dans des transactions.
@@ -105,6 +106,8 @@ On appelle <u>réseau Bitcoin</u>, l'ensemble des machines exécutant le protoco
 Via l'`OP_CODE` on peut réaliser des opérations algorithmique sur le réseau Bitcoin, on appelle cela un `script`. Pour plus de détail : [Opcodes used in Bitcoin Script - Bitcoin Wiki](https://wiki.bitcoinsv.io/index.php/Opcodes_used_in_Bitcoin_Script)
 
 > Pour aller plus loin : Qu'est-ce qu'une transaction Bitcoin ?
+-> Mention de l'UTXO set
+-> Mention de la signature
 
 Ordinals (comme d'autres avant) propose un standard de transaction, qui s'appelle `enveloppe` : 
 ```
@@ -136,6 +139,9 @@ Le but n'est pas d'être technique mais de comprendre d'où ça vient, de qui et
 Comprendre qui sont les participants et pouvoir permettre à chacun de se renseigner par eux-mêmes davantage sur ces développeurs.
 
 ### 1) Premières traces du dossier sur Github & Workshop de Casey
+
+-> Mention du serial numbering sur Bitcoin cf https://bitcointalk.org/index.php?topic=117224.0
+
 Le développeur phare de ce protocole est Casey Rodarmor ([Casey (@rodarmor) | Twitter](https://twitter.com/rodarmor/), [R O D A R M O R](https://rodarmor.com/), [casey (Casey Rodarmor) | Github](https://github.com/casey/)). 
 En 2015, il travailla activement sur Bitcoin Core où il réalisa une série de batchs (mises-à-jours) et le remaniement d'une partie du code de Bitcoin Core ([Casey Rodarmor's Resume](https://rodarmor.com/resume/index.html)).
 
@@ -143,6 +149,9 @@ En 2015, il travailla activement sur Bitcoin Core où il réalisa une série de 
 Taproot : en quelques mots, à partir de la réduction du poids des adresses et de l'augmentation de la taille de la *witness* (voir section II.1) cela permet d'augmenter la taille du scirpt associé à la transaction. 
 > Remarque : La traduction de cette witness `hex to text` qui ne fonctionne pas en l'état. Tester pour cela la witness d'une inscription dans [CyberChef](https://gchq.github.io/CyberChef/). A ce propos des premières solutions dans [Tweet @Blockcryptology](https://x.com/blockcryptology/status/1708454640373686299?s=46&t=V6rDQiBqyYm5XAi9Qbj6Ew)
 -->
+
+-> SegWit => Réduction des tailles des transactions par la séparation des adresses en premier et les témoins (witness) dans une autre section qui contiennent les scripts de signature
+-> Taproot => Plus spécifiquement TapScript (BIP 342) permet tout type de script (à vérifier)
 
 En tant qu'important contributeurs on retrouve [raphjaph (raph)](https://github.com/raphjaph), un étudiant d'informatique à l'université de Munich et [veryordinally (ordinally)](https://github.com/veryordinally?tab=overview&from=2015-12-01&to=2015-12-31) dont le profil a été crée en 2015 mais actif seulement sur Ordinals.
 
