@@ -52,7 +52,7 @@ Je suis disponible pour toutes questions, critiques ou retour de votre part sur 
 ####	c) Les commandes élémentaires 
 
 ## III) Utilisation et dernières avancées
-### 1) Outils en lignes
+### 1) Outils en ligne
 ####	a) Wallets
 ####	b) Platforms
 ####	c) Marketplace
@@ -675,7 +675,7 @@ Ils permettent donc une intégration simple et avancée des dernières fonctionn
 
 Plongeons alors dans ces outils avant de nous attaquer aux protocoles construits sur Ordinals puis aux Cursed Inscriptions et autres joyeusetés techniques actuelles.
 
-### 1) Outils en lignes
+### 1) Outils en ligne
 Les outils en lignes apparaissent comme nécessaires pour le développement de l'écosystème et on va essayer de les traiter en profondeur. 
 
 **ATTENTION : Tout ceci est encore en développement. Ne mettez ou ne laissez pas trop de Bitcoin dessus. On peut découvrir prochainement des failles et cela peut résulter en des pertes totales des ordinals et de votre argent.Rien n'est sur à 100% et ces plateformes sont très nouvelles.**
