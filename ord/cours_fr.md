@@ -643,8 +643,7 @@ Téléchargez `ord`: [Releases · ordinals/ord](https://github.com/ordinals/ord/
 
 ----------------
 
-Attention je n'ai pas encore trouver comment faire pour que l'indexing du client qui produit `index.redb` soit dans le disque dur et non pas sur l'ordinateur.
-Néanmoins, il est beaucoup plus léger que la chain Bitcoin (~ 13 Go) donc c'est moins dérangeant. 
+Pour spécifier l'emplacement d'arrivée du fichier `index.redb` il suffit d'utiliser `--index=YOUR/PATH/TO/INDEX/index.redb`.
 
 ----------------
 
