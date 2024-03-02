@@ -1,7 +1,8 @@
 <!--
 Author: GaloisField
-This content is under GNU-GPL v3 license. 
-If you modify this course you have to redistribute this and cite author(s) and contributor(s)!
+License: GNU-GPL v3 license
+Description: A general course about Ordinals Protocol (FR).
+Date: 21/07/23
 -->
 
 # Cours sur les Ordinals
@@ -10,12 +11,12 @@ If you modify this course you have to redistribute this and cite author(s) and c
 C'est un protocole Open-Source qui peut changer beaucoup de choses sur Bitcoin. 
 Pour ce faire je propose ci-dessous une base de cours la plus complète possible. Je ne pense pas être capable de rédiger la totalité de ce cours tout seul et propose à tous ceux qui sont intéressés par *Ordinals* de se joindre à moi pour tenter de présenter au mieux et au plus tôt ce cours.
 
-Ce cours me semble essentiel dans l'écosystème Bitcoin, à l'heure de *RGB*, [RGB Protocol on Bitcoin, What is it? | Trust Machines](https://trustmachines.co/learn/what-is-the-rgb-protocol-on-bitcoin/#:~:text=The%20RGB%20network%20is%20a,assets%20on%20the%20Bitcoin%20blockchain.), des annonces de *Ark*, [Bitcoin Developer Introduces New Layer 2 Protocol Ark - Bitcoin Magazine - Bitcoin News, Articles and Expert Insights](https://bitcoinmagazine.com/technical/bitcoin-developer-introduces-new-layer-2-protocol-ark) et une marketcap d'Ordinals estimée à $55,393,093 [Bitcoin Ordinals Analysis](https://dune.com/dgtl_assets/bitcoin-ordinals-analysis).
+Ce cours me semble essentiel dans l'écosystème Bitcoin, à l'heure de *RGB*, [RGB Protocol on Bitcoin, What is it? | Trust Machines](https://trustmachines.co/learn/what-is-the-rgb-protocol-on-bitcoin/#:~:text=The%20RGB%20network%20is%20a,assets%20on%20the%20Bitcoin%20blockchain.), des annonces de *Ark*, [Bitcoin Developer Introduces New Layer 2 Protocol Ark - Bitcoin Magazine - Bitcoin News, Articles and Expert Insights](https://bitcoinmagazine.com/technical/bitcoin-developer-introduces-new-layer-2-protocol-ark) et une tendance toujours en croissance des inscirptions [Bitcoin Ordinals Analysis](https://dune.com/dgtl_assets/bitcoin-ordinals-analysis).
 Comprendre ce nouveau protocole et surtout les derniers développements basés sur ce protocole me semble capital !
 
 Vous trouverez ci-dessous le sommaire, suivi d'un plan détaillé et des parties qui doivent être creusées. Vous trouverez également une partie [vocabulaire](#vocabulaire) qui pourra être complétée avec le temps afin de rendre ce cours le plus clair et accessible possible. 
 
-Je suis disponible pour toutes questions, critiques ou retour de votre part sur ce repo ou par mail : galoisfield2718@gmail.com.
+Je suis disponible pour toutes questions ou retours de votre part sur ce repo ou par mail : galoisfield2718@gmail.com.
 
 
 # Sommaire
@@ -25,11 +26,11 @@ Je suis disponible pour toutes questions, critiques ou retour de votre part sur 
 ## I/ Histoire
 ### 1) Premières traces du dossier sur Github & Workshop de Casey
 ####	a) Une première publication
-####	b) La présentation by Casey
-####	c) L'arrivée des degens et des techos
-####    d) Décalaration d'Open Ordinals Institute©️  et changements
-### 2) Des idées anciennes, remises au goût du jour
-#### 	a) Les colored coins
+####	b) La présentation *by* Casey
+####	c) L'arrivée des [*degens*](#vocabulaire) et des techos
+####    d) Décalaration d'Open Ordinals Institute©️  et changements <!--Problème: Nécessite de l'actualité ! Partie à update régulièrement -->
+### 2) Des idées anciennes, remises au goût du jour <!--Doit être finie ! Interviewer des gens qui les ont vécus et les retranscrire ici !-->
+#### 	a) Les colored coins 
 #### 	b) Counterparty
 #### 	c) Ethreum et les ABI
 ### 3) La core Team
@@ -39,15 +40,15 @@ Je suis disponible pour toutes questions, critiques ou retour de votre part sur 
 
 ## II) Théorie et implémentation
 ### 1) Compter les sats
-#### 	a) La méthode
+#### 	a) La méthode <!--Bien détailler cette partie -->
 ####	b) Les choix de Casey
 ####	c) A la recherche des sats rares
 ### 2) L'inscription
 ####	a) L'idée
 ####	b) La pratique
-####	c) Le code
+####	c) Le code <!-- Proposez un regards précis sur ce dernier. -->
 ### 3) Le client
-####	a) Bitcoin Core 
+####	a) Bitcoin Core <!-- Simplement mettre un bon tuto pour tous les OS ! -->
 ####	b) `ord`
 ####	c) Les commandes élémentaires 
 
@@ -528,6 +529,7 @@ L'exlporer [ordpool.space](https://ordpool.space) fait tout cela automatiquement
 
 [^2]: On notera que l'id d'une inscription est donnée par [txid]i0. Le i0 detérmine l'input, on peut avoir autre chose que i0 mais la plupart sont avec i0. Si on a plusieurs inputs on aura i1, i2,... . Mais la construction de l'id de l'inscription reste la même. 
 
+[^3]: Le terme *flag* est plus général en informatique. La notation pour les lignes de commandes dépendent mais sont souvent `[OPTIONS]`. C'est plus pour informer sur les termes en informatique.  
 
 ##### Discussion des metadata
 
@@ -637,20 +639,46 @@ Pour sa configuration il faut qu'il tourne sur `bitcoind` avec le flag `--txinde
 
 ####	b) `ord`
 
-Une fois que le nœud est entièrement téléchargé on peut télécharger et lancer le client `ord`. On parle de client pour parler de la ligne de commande qui est utilisé pour intéragir avec le protocole ordinals.
+Une fois que le nœud est entièrement téléchargé on peut télécharger et lancer le client `ord`. On parle de client pour parler de la ligne de commande qui est utilisée pour intéragir avec le protocole ordinals.
 
-Téléchargez `ord`: [Releases · ordinals/ord](https://github.com/ordinals/ord/releases) en prenant la dernière mise à jour.
+Pour télécharger et installer Bitcoin Core + `ord`, le super tuto de [@pazNGMI: How To Setup A Bitcoin Node & Ord Wallet](https://www.youtube.com/watch?v=tdC8kmjn5N0).
+*C'est en anglais... "Oooooh!!" A quand celui en français ?* 
+
+
+Bitcoin Core: [Releases - bitcoincore](bitcoincore.org/en/releases)
+`ord`: [Releases · ordinals/ord](https://github.com/ordinals/ord/releases)
+
 
 ----------------
 
-Pour spécifier l'emplacement d'arrivée du fichier `index.redb` il suffit d'utiliser `--index=YOUR/PATH/TO/INDEX/index.redb`.
+Pour spécifier l'emplacement d'arrivée du fichier `index.redb` il suffit d'utiliser `--index=/CHEMIN/VERS/index.redb`. On appelle cela un *flag*[^3] ou une *option*. On l'ajoute dans notre commande **avant** la commande principale (qui n'est pas un flag). Exemple: `ord --cookie-file=/CHEMIN/VERS/.cookie --index=/CHEMIN/VERS/index.redb index update`.
 
 ----------------
 
+Maintenant que vous avez téléchargé et installé `ord` que faites-vous ? Tapez `ord help` et allez à la section suivante ;)
 
 ####	c) Les commandes élémentaires 
 
-`ord help` Liste toutes les commandes
+Comme vous l'avez vu `ord help` liste toutes les commandes. Tout d'abord il va falloir créer un fichier qui indexe les ordinals. Pour cela `ord [FLAGS] index update`. Les flags sont appelés `[OPTIONS]` dans le *help*. 
+<u>Remarque</u>: Comme vous avez suivi, vous savez qu'un protocole doit être indexé pour exister. C'est pour ça que cette commande est importante. Elle n'est néanmoins pas obligatoire car elle est run automatiquement lors de l'usage de `wallet`, `server` et d'autres nécessitant l'usage de l'index (base de données). 
+
+Il nous faudra après créer un wallet. Pour cela `ord [OPTIONS] wallet create` qui générera toutes les informations qui devront être stockées associées au wallet.
+
+Après on fera `ord [OPTIONS] wallet receive` pour fund l'adresse. Cela affichera une adresse possédée par le wallet fraîchement créée.
+
+Enfin `ord [OPTIONS] --fee-rate=xx wallet inscribe CHEMIN/VERS/fichier.xxx` servira à inscrire le fichier désiré. Le flag `--fee-rate` exprimé en sats/vBytes servira à indiquer le ratio de frais désirés. Vérifiez sur [mempool.space](https://mempool.space) pour voir le niveau actuel. Il est toujours recommandé de mettre un peu plus si l'on veut que notre transaction passe assez rapidement. 
+
+**La liste si besoin**
+
+*OPTIONS*:
+`--cookie-file=CHEMIN/VERS/.cookie`: Spécifie le chemin vers le fichier `.cookie` de votre noeud bitcoincore.
+`--index=CHEMIN/VERS/index.redb`: Fichier d'index ordinals.
+`-t`: Mode testnet.
+
+*COMMANDS*:
+`ord help` Renvoi toute les commandes
+
+`ord index update`: Update la base de données (index)
 
 `ord wallet help` Liste les sous-commandes de wallet
 
@@ -676,9 +704,10 @@ Ils permettent donc une intégration simple et avancée des dernières fonctionn
 Plongeons alors dans ces outils avant de nous attaquer aux protocoles construits sur Ordinals puis aux Cursed Inscriptions et autres joyeusetés techniques actuelles.
 
 ### 1) Outils en ligne
-Les outils en lignes apparaissent comme nécessaires pour le développement de l'écosystème et on va essayer de les traiter en profondeur. 
+Les outils en ligne apparaissent comme nécessaires pour le développement de l'écosystème et on va essayer de les traiter en profondeur. 
 
 **ATTENTION : Tout ceci est encore en développement. Ne mettez ou ne laissez pas trop de Bitcoin dessus. On peut découvrir prochainement des failles et cela peut résulter en des pertes totales des ordinals et de votre argent.Rien n'est sur à 100% et ces plateformes sont très nouvelles.**
+*Remarque: Aujourd'hui Ledger gère Ordinals. Je vous recommande de vous renseignez (et de l'ajouter à ce cours ;) à ce sujet. Il est toujours plus sûr de stocker ses actifs sur des hardwares wallet connectés le moins possible à internet !*
 
 > Des tutos sur chacun de ces outils serait le bienvenue ;)
 
