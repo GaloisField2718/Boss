@@ -145,6 +145,13 @@ Taproot : en quelques mots, à partir de la réduction du poids des adresses et 
 > Remarque : La traduction de cette witness `hex to text` qui ne fonctionne pas en l'état. Tester pour cela la witness d'une inscription dans [CyberChef](https://gchq.github.io/CyberChef/). A ce propos des premières solutions dans [Tweet @Blockcryptology](https://x.com/blockcryptology/status/1708454640373686299?s=46&t=V6rDQiBqyYm5XAi9Qbj6Ew)
 -->
 
+> A propos du *witness program* associé à une transaction Bitcoin, on trouvera [la bip-0141](https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki) : "The `witness` is a serialization of all witness fields of the transaction. Each txin is associated with a witness field. A witness field starts with a `var_int` to indicate the number of stack items for the txin. It is followed by stack items, with each item starts with a `var_int` to indicate the length. Witness data is NOT script."
+> En définissant une transaction contenant un témoin (*witness*) par
+```
+    [nVersion][marker][flag][txins][txouts][witness][nLockTime]
+```
+![transaction id building](./assets/transaction_id_building.png)
+
 En tant qu'important contributeurs on retrouve [raphjaph (raph)](https://github.com/raphjaph), un étudiant d'informatique à l'université de Munich et [veryordinally (ordinally)](https://github.com/veryordinally?tab=overview&from=2015-12-01&to=2015-12-31) dont le profil a été crée en 2015 mais actif seulement sur Ordinals.
 
 > Sur Ordinally on a moins d'infos que sur les autres et ce profil parait assez étrange. Il serait intéressant de creuser d'avantage ainsi que de détailler les autres contributeurs : [Contributors to ordinals/ord](https://github.com/ordinals/ord/graphs/contributors).
@@ -353,12 +360,25 @@ def assign_ordinals(block):
 ```
 ####	b) Les choix de Casey
 
-Casey a choisit de nommer les sats en les numérotants.
+Casey a choisit de nommer les sats en plus de les numéroter.
 
-Il a également ajouté des "steps" en plus du halving avec les cycles et autres pour créer de la rareté sur certains sats.
-Il a créé un classement de sats rares que l'on peut voir [ici](https://docs.ordinals.com/overview.html). Pour plus de détails sur les sats rares vous pouvez consulter [c) A la recherche des sats rares](#c).
+Une notation intéressante est la notation par degré. Chaque sat est numéroté par sa position suivant un des quatres évènement suivants : 
+- *Bloc* : Position dans chaque nouveau bloc miné. Si c'est le premier : 0''' ;
+- *Ajustement de difficulté* : Position par rapport au dernier ajustement de difficulté (tous les 2016 blocs). Si c'est le premier : 0'' ;
+- *Halving* : Position par rapport au dernier bloc de halving (tous les 210 000 blocs). Le premier est noté : 0' ;
+- *Cycles* : Un évènement spécial qui est l'ajustement de la difficulté en même temps qu'un *halving*. Cela arrive tous les 6 *halvings*. Le prochain devrait être en 2032. On note le premier : 0°.
 
-Le comptage des sats fait partie des choix de Casey. Récemment, des discussions ont eu lieu pour savoir si l'on devait choisir le premier sat de l'utxo ou le dernier comme celui contenant l'inscription. 
+L'avantage de cette notation est sa visibilité par rapport aux raretés proposées par Casey que l'on peut voir [ici](https://docs.ordinals.com/overview.html). Tous les sats contenants au moins un 0 ne seront pas communs. 
+Par exemple : 1°1'0''0''' est rare.
+1◦ 2nd cycle
+1′ Pas le premier bloc d'une *halving epoch* 
+0′′ Premier bloc d'un ajustement de difficulté 
+0′′′ 1er sat du bloc
+
+Cette notation a par contre le défaut d'être difficilement trouvable telle quelle depuis un explorer.
+Pour plus de détails sur les sats rares vous pouvez consulter [c) A la recherche des sats rares](#c).
+
+Le comptage des sats fait partie des choix de Casey. Récemment, des discussions ont eu lieu pour savoir si l'on devait choisir le premier sat de l'utxo ou le dernier comme celui contenant l'inscription. Casey avait néanmoins dès le départ construit une file *First-In-First-Out* (FIFO) pour l'assignation des sats dans une transaction.
 
 
 [//](#c)
@@ -373,13 +393,13 @@ Les raretés initiales (historiques) étant :
 - `mythic`: Le premier sat du genesis bloc (Unique !).
 
 
-Néanmoins de nouvelles raretés sont apparus ! Vous pouvez notamment consulter le bon résumé dans le thread de [@@0xBes](https://twitter.com/0xBes) : [Thread: Categorization of Rare Satoshis 💎](https://x.com/0xBes/status/1739987968922632240?s=20). 
+Néanmoins de nouvelles raretés sont apparues ! Vous pouvez notamment consulter le bon résumé dans le thread de [@@0xBes](https://twitter.com/0xBes) : [Thread: Categorization of Rare Satoshis 💎](https://x.com/0xBes/status/1739987968922632240?s=20). 
 
-Depuis [sating](https://sating.io) : 
+On trouvera également [sating](https://sating.io) : 
 
  <img src="./assets/sats_rarity.png" alt="satsRarity" width="350" height="300">
 
-On peut voir qu'aujourd'hui la recherche et l'étude des rares sats devient une discipline : [la satologie](https://x.com/ZedZeroth/status/1710287026061267348?s=20).
+On peut voir qu'aujourd'hui la recherche et l'étude des rares sats devient une discipline à part entière : [la satologie](https://x.com/ZedZeroth/status/1710287026061267348?s=20).
 
 
 **Pour les chercher** :
@@ -390,8 +410,6 @@ Il est possible de le faire par ligne de commande via la [documentation officiel
 Evidemment, le plus facile est online ! De plus en plus d'outils intégrent aujourd'hui la visualisation des sats rares. Des nouvelles catégories arrivent régulièrement donc il faut vous tenir à jour à ce propos. 
 
 [Sat scanner | sating](https://sating.io/), un des premiers outils pour le faire.
-
-
 
 
 ### 2) L'inscription
