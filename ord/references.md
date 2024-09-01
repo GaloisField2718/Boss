@@ -16,7 +16,6 @@
 
 9. [magicoss/msigner: an open source Bitcoin Ordinals Partially Signed Bitcoin Transactions (PSBT) signer library. It supports atomic swap of the inscription and provides a simple and secure way to structure Bitcoin transactions for marketplaces.](https://github.com/magicoss/msigner)
 
-10. 
 
 -----------------------------------------------------
 | MARKETPLACE     |       URL                         |
@@ -42,8 +41,10 @@
 | OrdinalsWallet           | https://ordinalswallet.com/inscribe     |
 ---------------------------------------------------------------------
 | SatX                     | https://www.satsx.io/inscribe/ordinals  |
---------------------------------------------------------------------
+---------------------------------------------------------------------
 | idclub                   | https://idclub.io/inscribe              |
+---------------------------------------------------------------------
+| LooksOrdinal             | https://looksordinal.com/               |
 ---------------------------------------------------------------------
 | Inscribe Now             | https://inscribenow.io/new              |
 ---------------------------------------------------------------------
@@ -62,9 +63,9 @@
 ----------------------------------------------------
 
 
---------------------------------------------------------------
+-----------------------------------------------------------------
 | Groupes de discussions | Canal 	 |  Lien                      |
----------------------------------------------------------------
+-----------------------------------------------------------------
 | \>TheOrd 	            | Discord | https://discord.gg/wtMmkxvq |
 ---------------------------------------------------------------
 | The Ordicord	        | Discord | https://discord.gg/6yzuJWvG |
@@ -91,15 +92,6 @@
 ---------------------------------------------------------------
 | BRC20 France 	        | Telegram | Request to be added 	      |
 ---------------------------------------------------------------
-
-
-
-
-
-
-
-
-
 
 
 
