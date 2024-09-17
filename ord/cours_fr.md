@@ -199,7 +199,7 @@ Il aura fallu attendre décembre 2022 pour avoir la première inscription [Inscr
 
 Les Bitcoin rocks [Bitcoin Rocks | Ordiscan](https://ordiscan.com/collection/bitcoin-rocks) furent la première collection mintée entre 71 et 247 inscriptions. Ils ont été la porte d'entrée des 'Degens'. Ils ont permit de montrer comment publier une collection sur Ordinals. 
 
-Les [Taproot Wizard](https://taprootwizards.com/) auparavant Bitcoin Wizard 🧙🧙‍♀️ sur reddit ont mintés la majeure partie de la collection en un seul bloc [collaboration with Luxor mining pool](https://www.coindesk.com/tech/2023/02/02/giant-bitcoin-taproot-wizard-nft-minted-in-collaboration-with-luxor-mining-pool/amp/) et ont connu un franc succès dans la communauté. ils représentent aujourd'hui une pièce d'OG et une part de l'histoire Ordinals. 
+Les [Taproot Wizard](https://taprootwizards.com/) inspiré de Bitcoin Wizard 🧙🧙‍♀️ sur reddit ont mintés la majeure partie de la collection en un seul bloc [collaboration with Luxor mining pool](https://www.coindesk.com/tech/2023/02/02/giant-bitcoin-taproot-wizard-nft-minted-in-collaboration-with-luxor-mining-pool/amp/) et ont connu un franc succès dans la communauté. ils représentent aujourd'hui une pièce d'OG et une part de l'histoire Ordinals. 
 Les chiffres sur Taproot Wizard peuvent être trouvés sur [OXALUS.io](https://oxalus.io/nft/ordinals/bitcoin-wizards).
 
 Pour une [description](https://unisat.io/market/collection?collectionId=bitcoin-wizards) : Taproot Wizard est un projet Ordinal NFT célébrant le 10ème anniversaire de la collection originale Bitcoin Wizard créée par mavensbot. Magic Internet Money est une publicité iconique du subreddit bitcoin. Créé le lundi 18 février 2013 par u/mavensbot, c'est rapidement devenu la pub la plus populaire de reddit. 
@@ -223,8 +223,8 @@ Cette collection a ramenée les premières liquidités nécessaires au développ
 
 Les degens ont continués leur périple....
 
-Aujourd'hui de nombreuses collections s'échangent à prix d'or. On a vu réapparaitre les [cryptopunks](https://www.larvalabs.com/cryptopunks) sur Bitcoin, les [Bitcoin Punks](https://bitcoinpunks.com/), naître les [Bitcoin Frogs](https://twitter.com/BitcoinFrogs) ou même Pepe revenir en force. Néanmoins, la vague dégens de l'arrivée ne semble plus être ici pour l'instant. L'arrivée des brc-20 à changer le paysage...
-
+Aujourd'hui de nombreuses collections s'échangent à prix d'or. On a vu réapparaitre les [cryptopunks](https://www.larvalabs.com/cryptopunks) sur Bitcoin, les [Bitcoin Punks](https://bitcoinpunks.com/), naître les [Bitcoin Frogs](https://twitter.com/BitcoinFrogs) ou même Pepe revenir en force. Néanmoins, la vague dégens de l'arrivée ne semble plus être ici pour l'instant. L'arrivée des brc-20 à changé le paysage...
+Aujourd'hui de nombreuses choses se sont passés, les Puppets sont arrivés, OMB représente une grosse communauté sur Ordinals et les Runes ont fait beaucoup de bruits avant de connaître son premier hiver. 
 
 
 #### d) Décalaration d'Open Ordinals Institute©️  et changements
